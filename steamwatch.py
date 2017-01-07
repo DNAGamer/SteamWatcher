@@ -1,6 +1,26 @@
 import os
 import time
 
+print('Where is Steamapps located?')
+direct = input('The default location is, C:\Program Files (x86)\Steam\steamapps\n\n ')
+
+if os.path.isdir(direct):
+    pass
+else:
+    print("That directory doesnt exist")
+    time.sleep(3)
+    print("Attempting default location")
+    direct = "C:\Program Files (x86)\Steam\steamapps"
+    if os.path.isdir(direct):
+        pass
+    else:
+        print("Couldnt find steam in specified location or default location, aborting")
+        time.sleep(2)
+        exit()
+os.system("cls")
+print("Doing initial size checks on " + direct + " this may take a minute")
+
+
 def get_size(start_path):
     total_size = 0
     for dirpath, dirnames, filenames in os.walk(start_path):
@@ -9,9 +29,8 @@ def get_size(start_path):
             total_size += os.path.getsize(fp)
     return total_size
 
-os.system("cls")
 osize = int(0)
-direct = "C:/Program Files (x86)/Steam/steamapps"
+
 
 while True:
     csize = int(get_size(direct))
@@ -31,5 +50,4 @@ while True:
     os.system("cls")
     print("WAITING...")
     time.sleep(57)
-    
- 
+
