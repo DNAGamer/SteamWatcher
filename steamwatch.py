@@ -42,7 +42,7 @@ while True:
         csize = int(get_size(direct))
         if csize == osize:
             print("Size still hasnt changed, assuming steam has completed\n\n SHUTTING DOWN")
-            #os.system("C:/WINDOWS/system32/shutdown.exe")
+            os.system("C:/WINDOWS/system32/shutdown.exe")
         else:
             print("Size has increased")
     if csize > osize:
