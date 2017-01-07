@@ -36,11 +36,13 @@ while True:
     csize = int(get_size(direct))
     if csize == osize:
         print("Size hasnt changed since last pass")
-        time.sleep(60)
+        time.sleep(3)
+        os.system("cls")
+        time.sleep(57)
         csize = int(get_size(direct))
         if csize == osize:
             print("Size still hasnt changed, assuming steam has completed\n\n SHUTTING DOWN")
-            os.system("C:/WINDOWS/system32/shutdown.exe")
+            #os.system("C:/WINDOWS/system32/shutdown.exe")
         else:
             print("Size has increased")
     if csize > osize:
@@ -48,6 +50,6 @@ while True:
         print("Size has increased")
     time.sleep(3)
     os.system("cls")
-    print("WAITING...")
+    print("WAITING 60 SECONDS BEFORE NEXT CHECK...")
     time.sleep(57)
 
